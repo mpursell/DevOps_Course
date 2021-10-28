@@ -1,5 +1,5 @@
 
-
+# Simple FizzBuzz function
 
 def FizzBuzz(startNumber, endNumber):
 
@@ -24,3 +24,6 @@ def FizzBuzz(startNumber, endNumber):
 
 
 FizzBuzz(1,101)
+
+
+
