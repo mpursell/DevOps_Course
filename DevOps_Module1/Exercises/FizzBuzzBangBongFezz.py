@@ -21,6 +21,12 @@ def checkFactors(num):
 
     return (numberOfFactors, factorList)
 
+def splitOnCaps(string):
+
+    wordList = re.findall('[A-Z][^A-Z]*', string)
+
+    return wordList
+
 
 
 def fizzBuzzBangBongFezz(startNumber, endNumber):
@@ -72,8 +78,16 @@ def fizzBuzzBangBongFezz(startNumber, endNumber):
         # if 13 is a factor, but there are more than 2 factors, add 'Fezz' to the start
         ######  NEEDS TO DO STRING INSERT OF FEZZ AT FIRST B #########
         elif (13 in checkFactors(num)[1]):
+
+            # get the string value from the key (num)
             strDictValue = str(numbersDict[num])
-            numbersDict.update({num:'Fezz' + strDictValue})
+            
+            # Find a capital B (for Buzz / Bang / Bong) and insert 'Fezz'
+            # before the B
+            index = strDictValue.find('B')
+            strDictValue = strDictValue[:index] + 'Fezz' + strDictValue[index:]
+            
+            numbersDict.update({num:strDictValue})
 
 
         # if a number has 17 as a factor, reverse the Fizz, Buzz, Bang
