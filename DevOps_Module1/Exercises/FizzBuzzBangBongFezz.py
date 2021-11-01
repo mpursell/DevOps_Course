@@ -1,4 +1,23 @@
+# FizzBuzz / bang / bong / fezz - done
+# Stretch goal 1 - User prompt for max number - done
+# Stretch goal 2 - allow user to specifiy the rules to use - not done yet.
+# would probably use arguments vars and check when applying each rule if var
+# is set or not. 
+
 import re
+
+def inputNumber():
+
+    number = input('Enter a maximum number: ')
+
+    try:
+        number = int(number)
+        return number
+
+    except:
+        print('Value entered was not a number. Try again.')
+        inputNumber()
+        
 
 def checkFactors(num):
 
@@ -112,4 +131,7 @@ def fizzBuzzBangBongFezz(startNumber, endNumber):
 
         print(numbersDictKey, numbersDictValue)
 
-fizzBuzzBangBongFezz(1,256)
+
+if __name__ == "__main__":
+
+    fizzBuzzBangBongFezz(1,inputNumber())
